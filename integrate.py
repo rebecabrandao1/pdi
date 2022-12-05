@@ -83,7 +83,7 @@ for xmin, ymin, xmax, ymax in bboxes:
      # bounding box coordinates
      x, y, w, h = barcode.rect
      qrs.append((xmin + x, ymin + y, xmin + x + w, ymin + y + height))
-print(qrs)
+print(info)
 
 #%%
 #for d in decode(out):
