@@ -3,44 +3,7 @@ import numpy as np
 import cv2 as cv
 from pyzbar.pyzbar import decode
 import matplotlib.pyplot as plt
-#%%
-# def verificaqr(image):
 
-
-#    scale = 0.3
-#    width = int(image.shape[1] * scale)
-#    height = int(image.shape[0] * scale)
-#    image = cv.resize(image, (width, height))
-# #achando um limiar
-#    gray = cv.cvtColor(image, cv.COLOR_BGR2GRAY)
-#    _, thresh = cv.threshold(gray, 120, 255, cv.THRESH_BINARY_INV + cv.THRESH_OTSU)
-# #%%
-# # The bigger the kernel, the more the white region increases.
-# # If the resizing step was ignored, then the kernel will have to be bigger
-# # than the one given here.
-#    kernel = np.ones((3, 3), np.uint8)
-#    thresh = cv.dilate(thresh, kernel, iterations=1)
-#    contours, _ = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
-# #%%
-#    bboxes = []
-#    for cnt in contours:
-#       area = cv.contourArea(cnt)
-#       xmin, ymin, width, height = cv.boundingRect(cnt)
-#       extent = area / (width * height)
-  
-#   # filter non-rectangular objects and small objects
-#       if (extent > np.pi / 4) and (area > 100):
-#        bboxes.append((xmin, ymin, xmin + width, ymin + height))#%%
-# qrs = []
-# info = set()
-# for xmin, ymin, xmax, ymax in bboxes:
-#   roi = image[ymin:ymax, xmin:xmax]
-#   detections = pyzbar.decode(roi, symbols=[pyzbar.ZBarSymbol.QRCODE])
-#   for barcode in detections:
-#      info.add(barcode.data)
-#      # bounding box coordinates
-#      x, y, w, h = barcode.rect
-#      qrs.append((xmin + x, ymin + y, xmin + x + w, ymin + y + height))
  #%%
 
 img = cv.imread('sophiaeosmeninos/CERTA.jpg', cv.IMREAD_GRAYSCALE)
