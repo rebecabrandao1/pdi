@@ -23,8 +23,8 @@ frame = img[y1:y2, x1:x2]
 out = frame.copy()
 plt.imshow(out, cmap = 'gray')
 #%%
-kernel = np.ones((3, 3), np.uint8)
-thresh = cv.dilate(out, kernel, iterations=1)
+#kernel = np.ones((3, 3), np.uint8)
+#thresh = cv.dilate(out, kernel, iterations=1)
 contours, _ = cv.findContours(out, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 
 #%%
@@ -49,23 +49,3 @@ for xmin, ymin, xmax, ymax in bboxes:
 #print('informações do qr')
 print(info)
 
-#%%
-#for d in decode(out):
-    #print('entrou')
-    #s = d.data.decode()#qr code reader result --> comparar no comparador do roger
-    #print(s) #compare with seriesnumber
-    #print('devia estar aqui')
-    #out= cv.rectangle(out, (d.rect.left, d.rect.top),
-    #                            (d.rect.left + d.rect.width, d.rect.top + d.rect.height), (0, 255, 0), 3)
-    #out = cv.putText(out, s, (d.rect.left, d.rect.top + d.rect.height),
-     #                       cv.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 2, cv.LINE_AA)
-#cv.imshow(window_name, frame)
-# Display the resulting frame
-#%%
-
-#plt.imshow(out)
-
-
-
-
-# %%
